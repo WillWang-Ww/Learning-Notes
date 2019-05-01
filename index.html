@@ -15,16 +15,26 @@
 </body>
 <script>
     //获取一个节点的兄弟姐妹
-    var allChildren = item3.parentNode.chlidren
+    function getSibling (node){
+        var allChildren = node.parentNode.chlidren
     var array = {
         length : 0 
     }
     for(let i = 0 ; i < allChildren.length; i++){
-        if(allChildren[i] !== item3){
+        if(allChildren[i] !== node){
         array[array.length] = allChildren[i]
         array.length +=1
         }
+      }
     }
-    console.log(array)
+    
+    function x (node,classes){
+        for (let key in classes){
+            var value = classes[key]
+            var methodName = value ? 'add':'remove'
+            node.classlist[methodName](key)
+        }
+    }
+
 </script>
  </html>
