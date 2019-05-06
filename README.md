@@ -22,3 +22,13 @@
 思路：一字排开图片，加在一个div里，加overflow：hidden
 
 移动div，可以用margin-left/position relative/绝对定位/CSS3 transform（性能最好）
+
+图片img宽高能确定的最好写好，防止重排浪费性能
+
+currentTarget
+
+直接封装 jQuery对象 .ep
+
+触发click事件： trigger（'click'）
+
+鼠标浮上去和离开： mouseennter / mouseleave
