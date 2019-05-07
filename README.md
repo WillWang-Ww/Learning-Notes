@@ -32,3 +32,7 @@ currentTarget
 触发click事件： trigger（'click'）
 
 鼠标浮上去和离开： mouseennter / mouseleave
+
+3.无缝轮播
+
+思路：打碎整体，一个一个轮过去
