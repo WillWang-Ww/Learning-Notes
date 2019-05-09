@@ -1,4 +1,9 @@
 # demojQuery
+jQuery初识
+
+obj.x() ===
+obj['x']()
+
 用jQuery做轮播
 
 1.内容、样式、行为分离
