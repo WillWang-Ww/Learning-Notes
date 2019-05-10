@@ -95,10 +95,16 @@ xxx.onclick = function(){}
  addEventListener
  默认第三个参数为undefined，先小后大，改成true则先大后小。
 
- 爷爷-爸爸-儿子：捕获阶段
+ 爷爷-爸爸-儿子：捕获阶段 true
 
  儿子-爸爸-爷爷：冒泡阶段
 
  事件模型：捕获阶段+冒泡阶段
 
  一个div既有冒泡阶段又有捕获阶段，请问是哪个先执行？如果直接触发在本身上，不区分捕获还是冒泡，按照写的顺序发生。
+
+ 5.点击别处关闭浮层（DOM事件例子）
+
+ e.stopPropagation 不告诉父母-->阻止冒泡 
+
+ $(wrapper).on('click',false)
