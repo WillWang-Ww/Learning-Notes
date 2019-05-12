@@ -108,3 +108,24 @@ xxx.onclick = function(){}
  e.stopPropagation 不告诉父母-->阻止冒泡 
 
  $(wrapper).on('click',false)
+
+ 6.继续做轮播
+
+ document.addEventListener('visibilitychange',function(e){
+     
+     if(document.hidden){
+     
+         window.clearInterval(time)
+     
+     }else{
+
+     }
+ 
+ })
+
+ append prepend
+
+ offset?
+
+轮播组建：swiper
+
