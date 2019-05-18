@@ -1,6 +1,6 @@
-#JSONP笔记
+#JSONP笔记#
 
-##浏览器安全基石：同源政策
+##浏览器安全基石：同源政策##
 
 协议相同，域名相同，端口相同
 
@@ -30,7 +30,7 @@ origin字段判断
 
 3.CORS
 
-##JSONP
+##JSONP##
 
 数据库：能长久存数据的地方
 
@@ -58,14 +58,14 @@ from表单一旦提交，就会刷新页面
 
 更好的方法：
 
-###img发请求法：
+###img发请求法：###
 
 不用form，按钮被点击时，利用可以发请求的标签：比如img，发送请
 求，利用onload和onerror判断是否发送成功
 
 页面刷新：window.location.reload()
 
-###script发请求法：SRJ(server rendered javascript)
+###script发请求法：SRJ(server rendered javascript)###
 
 把  script  append  到body里
 
@@ -75,7 +75,7 @@ content-type:application/javascript
 
 无刷新局部更新页面的方法。牛逼。
 
-##请求另一个网站的script
+##请求另一个网站的script##
 
 script不受域名限制，任何网站都可以使用另一个网站的JS。
 
@@ -87,7 +87,7 @@ script不受域名限制，任何网站都可以使用另一个网站的JS。
 
 方案缺点：后端的代码涉及了太多的前端代码，对分离不利。耦合。
 
-##解耦
+##解耦##
 后端是不是可以直接调个函数xxx？不去了解细节？
 
 -JS定义，window.xxx //前端代码
@@ -105,7 +105,7 @@ $(query.callbackName).call(undefined,{
 
 JSON + Padding = JSONP
 
-##JSONP完整过程
+##JSONP完整过程##
 
 请求方：一个网站的前端 frank.com （浏览器）
 
