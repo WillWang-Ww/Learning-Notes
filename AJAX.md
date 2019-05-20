@@ -124,3 +124,77 @@ request.onreadystatechange = ()=>{
     }
 
 }
+
+**深入学习AJAX**
+GET /XXX HTTP/1.1
+HOST:jack.com:8002
+Content-Type:
+
+1.JS可以设置任意请求 header 吗--可以
+
+设置第一部分： request.open('get','/xxx')
+
+设置第二部分： request.setHeader('Content-Type','x-www-form-urllencoded')
+
+设置第四部分： request.send('...')
+
+2.JS 可以获取任意响应 Header 吗?
+
+第一部分： request.status / request.statusText
+
+第二部分： request.getResponseHeader() / request.getAllResponseHeader()
+
+第四部分： request.reponseText
+
+服务器端设置：
+
+reponse.statusCode = 200
+
+reponse.setHeader('Content-Type','...')
+
+reponse.write(`..  ..`)
+
+reponse.end()
+
+**一点点TCP知识**
+    HTTP底层是由TCP/IP协议构成的
+    浏览器-DNS缓存-服务器-IP-三次握手
+    响应：建立连接，传HTTP的四部分，单位为<包>，第一个数据就拿到了200/400什么的。
+
+**封装AJAX jQuery.AJAX**
+    传入有结构的参数 --- 直接传一个对象 取名options
+    let url = options.url
+    使用方代码自己不call，而是别人call，callback.使用方传一个参数过去，让别人call。
+
+    //ES6解构赋值 ： let {method,body,successFn,failFn,headers} = options
+
+**了解一下promise**
+    确定函数形式的规范
+    意义：1.以位置代替函数名，省的记名字了
+    2.可以对同一个东西多次处理，多次.then就好了
+
+    return new Promise(function(resolve,reject){
+
+    })
+
+    promise函数接收一个函数，返回一个带then的哈希，
+
+    ```
+window.jQuery = function(){}
+window.$ = window.jQuery
+
+window.jQuery.ajax = function({url, method, body, success, fail}){
+  let request = new XMLHttpRequest()
+  request.open(method, url) // 配置request
+  request.onreadystatechange = ()=>{
+    if(request.readyState === 4){
+      if(request.status >= 200 && request.status < 300){
+        success.call(undefined, request.responseText)
+      }else if(request.status >= 400){
+        fail.call(undefined, request)
+      }
+    }
+  }
+  request.send(body)
+}
+```
